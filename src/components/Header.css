@@ -1,0 +1,127 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  position: relative;
+}
+
+.header__links {
+  display: flex;
+  gap: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.header__links li a {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid var(--navy);
+  margin-right: -1px;
+  transition: background-color 0.2s, color 0.2s;
+  color: var(--navy);
+}
+
+.header__links li:first-child a {
+  border-radius: 2px 0 0 2px;
+}
+
+.header__links li:last-child a {
+  border-radius: 0 2px 2px 0;
+}
+
+.header__links li a:hover {
+  background-color: var(--navy);
+  color: #fff;
+  opacity: 1;
+}
+
+.header__links--active {
+  background-color: var(--navy);
+  color: #fff !important;
+}
+
+.header__logo a {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  right: 16px;
+}
+
+.header__cart {
+  background: none;
+  border: 1px solid var(--navy);
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--navy);
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.header__cart:hover {
+  background-color: var(--navy);
+  color: #fff;
+}
+
+.header__menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+@media (max-width: 500px) {
+  .header__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    padding: 16px 24px;
+    gap: 8px;
+  }
+
+  .header__links--open {
+    display: flex;
+  }
+
+  .header__links li a {
+    border-radius: 2px;
+    margin-right: 0;
+  }
+
+  .header__menu-toggle {
+    display: block;
+  }
+
+  .header__logo a {
+    font-size: 14px;
+  }
+}
